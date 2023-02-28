@@ -8,7 +8,14 @@ function barTriang(p1, p2, p3) {
     return c;
 }
 
-
+function cubeChecker(volume, side) {
+    let a = (side * side * side);
+    if (a != volume || a <= 0) {
+        return false;
+    } else {
+        return true;
+    }
+};
 
 
 
