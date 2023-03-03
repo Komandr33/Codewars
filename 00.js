@@ -86,3 +86,35 @@ function numberToPower(num, pow) {
 
 //-----------------------------------------------------------------
 
+function strCount(str, letter) {
+    let a = 0;
+    if (str.includes(letter)) {
+        for (i = 0; i < str.length; i++) {
+            if (str[i] == letter) {
+                a++;
+            }
+        }
+        return a;
+    } else return 0;
+}
+console.log(strCount("Hello", 'o')); // returns 1
+console.log(strCount("Hello", 'l')); // returns 2
+console.log(strCount("qwe", 'z')); // returns 0
+//-----------------------------------------------------------------
+
+// Write a function "greet" that returns "hello world!"
+const greet = () => 'hello world!';
+
+//-----------------------------------------------------------------
+
+function uniTotal(str) {
+    let strTotal = 0;
+    for (let i = 0; i < str.length; i++) {
+        strTotal += str[i].codePointAt(0)
+    }
+    return strTotal;
+}
+console.log(uniTotal('aaa'));
+
+//-----------------------------------------------------------------
+
