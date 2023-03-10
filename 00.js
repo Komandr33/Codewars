@@ -120,3 +120,17 @@ console.log(uniTotal('aaa'));
 
 
 //-----------------------------------------------------------------
+
+// function multByFuctor(value, multiplayer = 1) {
+//     return value * multiplayer
+// }
+
+const myFuctor = (v, m) => { return v * m };
+
+(value, multiplayer) => value * multiplayer;
+console.log(myFuctor(5, 2));
+
+const newPost = (post, addedAt = Date()) => ({
+    ...post,
+    addedAt
+})
