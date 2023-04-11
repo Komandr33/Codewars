@@ -134,3 +134,23 @@ const newPost = (post, addedAt = Date()) => ({
     ...post,
     addedAt
 })
+
+//-----------------------------------------------------------------
+
+function feast(beast, dish) {
+    return beast[0] === dish[0] && beast.slise(-1) === dish.slise(-1);
+}
+
+//-----------------------------------------------------------------
+
+function DNAtoRNA(dna) {
+    let rna = '';
+    for (let i = 0; i < dna.length; i++) {
+        if (dna[i] !== 'T') {
+            rna += dna[i];
+        } else rna += 'U';
+    }
+    return rna;
+}
+
+console.log(DNAtoRNA('GCAT'));
