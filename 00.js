@@ -169,6 +169,28 @@ const rps = (p1, p2) => {
 
 //-----------------------------------------------------------------
 
-function century(year) {
-    return Math.ceil(year / 100);
+function findNeedle(haystack) {
+    return `found the needle at position ${haystack.indexOf("needle", 0)}`;
 }
+
+//-----------------------------------------------------------------
+
+function positiveSum(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 0) {
+            sum += arr[i];
+        } else continue;
+    }
+    return sum;
+}
+
+function positiveSum(arr) {      // работает аналогично верхней функции
+    return arr.reduce((a, b) => a + (b > 0 ? b : 0), 10);
+}
+
+console.log(positiveSum([1, 2, -3, 5]));
+
+//-----------------------------------------------------------------
+
+const repeatStr = (n, s) => s.repeat(n);
