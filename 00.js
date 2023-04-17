@@ -194,3 +194,58 @@ console.log(positiveSum([1, 2, -3, 5]));
 //-----------------------------------------------------------------
 
 const repeatStr = (n, s) => s.repeat(n);
+
+//-----------------------------------------------------------------
+
+function bmi(weight, height) {
+    b = weight / Math.pow(height, 2);
+    return b <= 18.5 ? "Underweight" :
+        b <= 25 ? "Normal" :
+            b <= 30 ? "Overweight" : "Obese"
+}
+
+//-----------------------------------------------------------------
+
+const vowels = 'aeiouy';
+
+function disemvowel(str) {  // disemvowel(); убирает все гласные из строки и возвращает её
+    return str
+        .split('')          // преобразует строку в массив посимвольно 
+        .filter(letter => !vowels.includes(letter.toLowerCase())) // ищет совпадения каждого симв. из нового  
+        .join('');     // преобразует массив в строку                массива в стр.vowels 
+}
+
+function disemvowel(str) {                  // выполняет то же, что и ф-я выше
+    return str.replace(/[aeiou]/gi, '');    // заменяет с [aeiou] на пуст.строку
+}
+
+//-----------------------------------------------------------------
+
+const boolToWord = (b) => b ? 'Yes' : 'No';
+
+//-----------------------------------------------------------------
+
+function sum(numbers) {
+    let a = 0;
+    if (numbers !== undefined) {
+        for (let i = 0; i < numbers.length; i++) {
+            a += numbers[i];
+        }
+    }
+    return a;
+};
+
+function sum(numbers) {                          // выполняет то же, что и ф-я выше
+    return numbers.reduce((a, b) => a + b, 0);
+};
+
+//-----------------------------------------------------------------
+
+function sumTwoSmallestNumbers(numbers) {
+    let a = numbers.sort((a, b) => {
+        return a > b ? 1 : a == b ? 0 : -1;
+    });
+    return a[0] + a[1];
+}
+
+//-----------------------------------------------------------------
