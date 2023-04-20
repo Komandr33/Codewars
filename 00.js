@@ -242,10 +242,30 @@ function sum(numbers) {                          // выполняет то же
 //-----------------------------------------------------------------
 
 function sumTwoSmallestNumbers(numbers) {
-    let a = numbers.sort((a, b) => {
-        return a > b ? 1 : a == b ? 0 : -1;
-    });
-    return a[0] + a[1];
+    let a = numbers.sort((a, b) => { return a - b; });
+    return a[0];
+}
+console.log(sumTwoSmallestNumbers([5, 22, 34, -1, 0, 1]))
+//-----------------------------------------------------------------
+
+class SmallestIntegerFinder(numbers) {
+    let a = numbers.sort((a, b) => { return a - b; });
+    return a[0];
 }
 
 //-----------------------------------------------------------------
+
+lovefunc = (f1, f2) => (f1 + f2) % 2 !== 0;
+console.log(lovefunc(2, 2));
+
+//-----------------------------------------------------------------
+
+function DNAStrand(dna) {
+    let arr = '';
+    for (let i = 0; i < dna.length; i++) {
+        if (dna[i] == 'A') {
+            arr += 'T'
+        }
+    }
+    return dna.replace('A', 'T')
+}
