@@ -248,7 +248,7 @@ function sumTwoSmallestNumbers(numbers) {
 console.log(sumTwoSmallestNumbers([5, 22, 34, -1, 0, 1]))
 //-----------------------------------------------------------------
 
-class SmallestIntegerFinder(numbers) {
+function SmallestIntegerFinder(numbers) {
     let a = numbers.sort((a, b) => { return a - b; });
     return a[0];
 }
