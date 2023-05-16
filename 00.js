@@ -320,10 +320,157 @@ function b(x, y) {
 console.log(a([1, 2, 1, 3, 4, 2, 1, 3, 2, 5, 6, 1, 3], [2, 1]));
 console.log(b([1, 2, 1, 3, 4, 2, 1, 3, 2, 5, 6, 1, 3], [2, 1]));
 
-
+Array.prototype.remove_ = function (integerList, valuesList) {
+    let newArray = integerList;
+    newArray.forEach((e, i) => {
+        valuesList.forEach((v, i) => {
+            if (v[i] === e[i]) {
+                newArray.splice(i, 1);
+            }
+        })
+    });
+    return newArray;
+} // Мой вариант функции. НЕ РАБОТАЕТ!!! ПОЧЕМУ???
 
 //-----------------------------------------------------------------
 
+function getDivisorsCnt(n) {   // возвращает число делителей натурального числа
+    let cnt = 0;
+    for (let i = n; i > 0; i--) {
+        if ((n % i) == 0) {
+            cnt += 1;
+        }
+    }
+    return cnt;
+}
+console.log(getDivisorsCnt(24));
+// НУЖНО ОПТИМИЗИРОВАТЬ! НЕ ПРОХОДИТ КОНТРОЛЬНЫЙ ТЕСТ!!!
+//-----------------------------------------------------------------
 
+function litres(t) {
+    return Math.floor(t / 2);
+}
 
 //-----------------------------------------------------------------
+
+function rentalCarCost(d) {
+    let rent = d * 40;
+    return d > 2 && d < 7 ? rent - 20 :
+        d > 6 ? rent - 50 : rent;
+}
+console.log(rentalCarCost(7));
+//-----------------------------------------------------------------
+
+function toAlternatingCase(str) {
+    let newStr = '';
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] == str[i].toLowerCase()) {
+            newStr += str[i].toUpperCase()
+        } else newStr += str[i].toLowerCase()
+    }
+    return newStr;
+}
+
+console.log(toAlternatingCase('andreY'));
+
+//-----------------------------------------------------------------
+
+function squareDigits(num) {
+    const newNum = String(num).split('');
+    const ans = [];
+    newNum.forEach(e => {
+        ans.push(e * e)
+    })
+
+    return +ans.join('');
+}
+
+//-----------------------------------------------------------------
+
+function switchItUp(num) {
+    let word = '';
+    switch (num) {
+        case 0:
+            word = 'Zero'
+            break;
+        case 1:
+            word = 'One'
+            break;
+        case 2:
+            word = 'Two'
+            break;
+        case 3:
+            word = 'Three'
+            break;
+        case 4:
+            word = 'Four'
+            break;
+        case 5:
+            word = 'Five'
+            break;
+        case 6:
+            word = 'Sics'
+            break;
+        case 7:
+            word = 'Seven'
+            break;
+        case 8:
+            word = 'Eitch'
+            break;
+        case 9:
+            word = 'Nine'
+            break;
+    }
+    return word;
+}
+
+//-----------------------------------------------------------------
+
+const oddOrEven = (arr) => {
+    return arr.reduce((sum, current) => sum + current, 0) % 2 == 0 ? "even" : "odd";
+}
+
+//-----------------------------------------------------------------
+
+const areaOrPerimeter = function (l, w) {
+    return l == w ? l * w : (l + w) * 2;
+};
+
+//-----------------------------------------------------------------
+
+function descendingOrder(n) {
+    return +String(n).split('').sort().reverse().join('');
+}
+
+//-----------------------------------------------------------------
+
+const calc = () => {
+    let a = prompt('Введите пример', 2 + 2 * 2);
+    eval(a);
+}
+
+//-----------------------------------------------------------------
+
+function countPositivesSumNegatives(input) { // возвращает массив с кол-вом пол. арг-ов и суммой отриц-ых
+    let output = [];
+    if (input == null || input.length == 0) {
+        return output;
+    } else {
+        output = [0, 0];
+        input.forEach(e => {
+            if (e > 0) {
+                output[0] += 1
+            } else if (e < 0) {
+                output[1] += e;
+            }
+        });
+        return output;
+    }
+}
+
+//-----------------------------------------------------------------
+
+countRedBeads = (n) => n > 2 ? n * 2 - 2 : 0;
+
+//-----------------------------------------------------------------
+
