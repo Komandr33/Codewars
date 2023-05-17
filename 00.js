@@ -474,3 +474,37 @@ countRedBeads = (n) => n > 2 ? n * 2 - 2 : 0;
 
 //-----------------------------------------------------------------
 
+const draw = (deck) => { // пребирает м-в и возвращает другой с исправлениями
+    const drawnCards = [];
+
+    while (deck.length > 1) {
+        drawnCards.push(deck.shift());
+        deck.push(deck.shift());
+    }
+    return drawnCards.concat(deck);
+};
+
+console.log(draw(["KC", "KH", "QC", "KS", "KD", "QH", "QD", "QS"]));
+
+//-----------------------------------------------------------------
+
+const pass = [[10, 0], [3, 5], [5, 8]];
+
+const number = (busStops) => {  // вычисляет значение складывая первые 
+    let pass = 0;               // индексы подмассивов и вычитая вторые
+    busStops.forEach(e => {
+        pass += e[0];
+        pass -= e[1];
+    })
+    return pass;
+}
+// то же самое, что и выше
+const num = (busStops) => busStops.reduce((rem, [on, off]) => rem + on - off, 0);
+
+console.log(number(pass));
+
+//-----------------------------------------------------------------
+
+function lostSheep(f, s, t) {   // возвр. разницу мужду t и суммой f и s 
+    return t - (f.concat(s).reduce((accum, curr) => accum + curr, 0))
+}
