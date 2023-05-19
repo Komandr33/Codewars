@@ -508,3 +508,32 @@ console.log(number(pass));
 function lostSheep(f, s, t) {   // возвр. разницу мужду t и суммой f и s 
     return t - (f.concat(s).reduce((accum, curr) => accum + curr, 0))
 }
+
+
+function mostLikely(prob1, prob2) {
+    let a = prob1.split(':');
+    let b = prob2.split(':');
+    return (a[0] / a[1]) > (b[0] / b[1]);
+}
+
+console.log(mostLikely('1 : 3', '1 : 2'));
+
+
+function arr2bin(arr) {
+    let newArr = [];
+    for (let e of arr) {
+        if (typeof e !== 'number') {
+            return false;
+        } else {
+            newArr.push(e);
+        }
+    }
+    return newArr.reduce((s, c) => s + c, 0).toString(2);
+}
+
+// function arr2bin(a) {
+//     if (a.some((x) => typeof x != "number"))
+//         return false;
+//     return a.reduce((a, b) => a + b, 0).toString(2);
+// }
+console.log(arr2bin([1, 2, 3, 55, true]));
