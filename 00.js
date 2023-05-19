@@ -509,8 +509,9 @@ function lostSheep(f, s, t) {   // возвр. разницу мужду t и с
     return t - (f.concat(s).reduce((accum, curr) => accum + curr, 0))
 }
 
+//-----------------------------------------------------------------
 
-function mostLikely(prob1, prob2) {
+function mostLikely(prob1, prob2) { // возвращает true, если среднее 1-го значения больше, иначе false
     let a = prob1.split(':');
     let b = prob2.split(':');
     return (a[0] / a[1]) > (b[0] / b[1]);
@@ -518,9 +519,10 @@ function mostLikely(prob1, prob2) {
 
 console.log(mostLikely('1 : 3', '1 : 2'));
 
+//-----------------------------------------------------------------
 
-function arr2bin(arr) {
-    let newArr = [];
+function arr2bin(arr) {  // возвращает строкове значение (в двоичной системе исч.) суммы значений массива,
+    let newArr = [];     // если в массиве тоько 'number'
     for (let e of arr) {
         if (typeof e !== 'number') {
             return false;
@@ -531,9 +533,74 @@ function arr2bin(arr) {
     return newArr.reduce((s, c) => s + c, 0).toString(2);
 }
 
-// function arr2bin(a) {
-//     if (a.some((x) => typeof x != "number"))
-//         return false;
-//     return a.reduce((a, b) => a + b, 0).toString(2);
-// }
 console.log(arr2bin([1, 2, 3, 55, true]));
+
+//-----------------------------------------------------------------
+
+function getMiddle(s) {
+    let a = s.length / 2
+    let b = (s.length - 1) / 2;
+    if (s.length % 2 == 0) {
+        return s[a - 1] + s[a];
+    } else return s[b];
+}
+
+console.log(getMiddle('testing'));
+
+//-----------------------------------------------------------------
+
+function getCount(str) {
+    let count = 0;
+    const arr = ['a', 'e', 'i', 'o', 'u'];
+    for (let a of arr) {
+        for (let i = 0; i < str.length; i++) {
+            if (a == str[i]) {
+                count++;
+            }
+        }
+    }
+    return count;
+}
+
+console.log(getCount('abracadabra'));
+
+//-----------------------------------------------------------------
+
+function tribonacci(signature, n) { // возвр. массив с последовательностью Трибоначчи
+    if (n == 0) {
+        return [];
+    }
+    let arr = signature;
+    let f = 0;
+    for (let i = 0; i < (n - 3); i++) {
+        arr.push(arr.at(-1) + arr.at(-2) + arr.at(-3));
+        f++;
+    }
+    return arr.slice(0, n);
+}
+//  снизу то же, что и выше
+function tribonacci(sign, n) {
+    for (var i = 0; i < n - 3; i++) { // iterate n times
+        sign.push(sign[i] + sign[i + 1] + sign[i + 2]); // add last 3 array items and push to trib
+    }
+    return sign.slice(0, n); //return trib - length of n
+}
+
+//-----------------------------------------------------------------
+
+function solution(str) {
+    return str.split('').reverse().join('');
+}
+
+console.log(solution('world'))
+
+
+function toJadenCase(str) {
+    let str1 = str.split(' ');
+    str1.forEach(e => {
+        return e = e.charAt(0).toUpperCase() + e.slice(1)
+    });
+    return str1.join();
+}
+
+console.log(toJadenCase("how can mirrors be real if our eyes aren't real"))
