@@ -1,3 +1,5 @@
+'use strict'
+
 function countSheeps(arrayOfSheep) {
     // TODO May the force be with you
     let a = 0;
@@ -594,13 +596,86 @@ function solution(str) {
 
 console.log(solution('world'))
 
+//-----------------------------------------------------------------
 
-function toJadenCase(str) {
-    let str1 = str.split(' ');
-    str1.forEach(e => {
-        return e = e.charAt(0).toUpperCase() + e.slice(1)
-    });
-    return str1.join();
+function per(n) {
+    let arr = String(n).split('');
+    let arr1 = [n];
+    while (n[-1] >= 10) {
+        let v = arr.reduce((a, e) => {
+            return a = a * e
+        })
+        arr1.push(v);
+    }
+    return arr1;
 }
 
-console.log(toJadenCase("how can mirrors be real if our eyes aren't real"))
+//-----------------------------------------------------------------
+
+function per(n) {
+    let res = []
+    while (n >= 10) {
+        n = n.toString().split('').reduce(
+            (p, c) => p * c
+        )
+        res.push(n)
+    }
+    return res
+}
+
+console.log(per(277777788888899))
+
+//-----------------------------------------------------------------
+
+function printerError(s) {
+    let control = /[a-m]/g;
+    let den = s.split('').length;
+    let num = den - s.match(control).length;
+    return `${num}/${den}`
+}
+
+console.log(printerError("aaaxbbbbyyhwawiwjjjwwm"))
+
+//-----------------------------------------------------------------
+
+function vowel2index(str) {     // меняет совпадения из рег.выр. на числовой аналог
+    return str.replace(/[aeiou]/ig, (m, i) => i + 1);
+}
+
+console.log(vowel2index('this is my string'));
+
+//-----------------------------------------------------------------
+
+function minMax(arr) {
+    let c = [];
+    c.push(Math.min(arr));
+    return c;
+}
+
+console.log(minMax([1, 2, 3, 4, 5]))
+
+//-----------------------------------------------------------------
+
+function rowSumOddNumbers(n) {  // возвр. сумму цисел, основания пирамиды из нечётных чисел
+    let j = 0; // I count how many elements there are in the pyramid in total
+    for (let i = 1; i <= n; i++) {
+        j += i
+    }
+
+    let arr = [1]; // creating an array with all the elements of the pyramid
+    for (let i = 1; i < j; i++) {
+        arr.push(arr.at(-1) + 2)
+    }
+
+    arr.splice(0, j - n) // I trim the array to the last 'n' elements
+    return arr.reduce((e, i) => e + i); // I return the sum of the last 'n' elements
+}
+console.log(rowSumOddNumbers(5));
+
+function rowSumOddNumbers(n) { // то же, что и выше
+    return Math.pow(n, 3);
+}
+console.log(rowSumOddNumbers(5));
+
+//-----------------------------------------------------------------
+
