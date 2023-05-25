@@ -679,3 +679,47 @@ console.log(rowSumOddNumbers(5));
 
 //-----------------------------------------------------------------
 
+function sortArray(array) {
+    let a = array.filter(e => e % 2 !== 0).sort();
+    let b = array.filter(e => e % 2 == 0);
+    let c = [];
+
+    array.forEach((e, i) => {
+        if (e % 2 == 0) {
+            c.push(i)
+        }
+    })
+
+    for (let i = 0; i < c.length; i++) {
+        a[c[i]] = b[i];
+    }
+    return a;
+}
+
+console.log(sortArray([9, 2, 3, 4, 7, 1, 6, 5, 0]));
+
+let array = [5, 3, 2, 8, 1, 4, 10, 11, 2, 14, 15, 7],
+    indices = [];
+
+array.filter((v, i) => v % 2 && indices.push(i))
+    .sort((a, b) => a - b)
+    .forEach((v, i) => array[indices[i]] = v);
+
+console.log(array);
+
+
+const sequenceSum = (begin, end, step) => {
+    if (begin > step) {
+        return 0;
+    } else {
+        let sum1 = 0;
+        let sum2 = begin + step;
+        while (sum2 < end) {
+            sum1 += sum2;
+            sum2 += step;
+        }
+        return sum1;
+    }
+};
+
+console.log(sequenceSum(2, 6, 2));
