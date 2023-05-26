@@ -68,13 +68,13 @@ var describeAge = a => `You're a(n) ${a < 13 ? "kid" : a < 18 ? "teenager" : a <
 
 //-----------------------------------------------------------------
 
-function find(array, element) {
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] == element) return i;
-    } return "Not found";
-}
-// abbreviated function
-let find = (a, e) => a.includes(e) ? a.indexOf(e) : "Not found";
+// function find(array, element) {
+//     for (let i = 0; i < array.length; i++) {
+//         if (array[i] == element) return i;
+//     } return "Not found";
+// }
+// // abbreviated function
+// let find = (a, e) => a.includes(e) ? a.indexOf(e) : "Not found";
 
 //-----------------------------------------------------------------
 
@@ -88,23 +88,23 @@ function numberToPower(num, pow) {
 
 //-----------------------------------------------------------------
 
-function strCount(str, letter) {
-    let a = 0;
-    if (str.includes(letter)) {
-        for (i = 0; i < str.length; i++) {
-            if (str[i] == letter) {
-                a++;
-            }
-        }
-        return a;
-    } else return 0;
-}
-console.log(strCount("Hello", 'o')); // returns 1
-console.log(strCount("Hello", 'l')); // returns 2
-console.log(strCount("qwe", 'z')); // returns 0
-//-----------------------------------------------------------------
-
-// Write a function "greet" that returns "hello world!"
+// function strCount(str, letter) {
+//     let a = 0;
+//     if (str.includes(letter)) {
+//         for (i = 0; i < str.length; i++) {
+//             if (str[i] == letter) {
+//                 a++;
+//             }
+//         }
+//         return a;
+//     } else return 0;
+// }
+// console.log(strCount("Hello", 'o')); // returns 1
+// console.log(strCount("Hello", 'l')); // returns 2
+// console.log(strCount("qwe", 'z')); // returns 0
+// //-----------------------------------------------------------------
+//
+// // Write a function "greet" that returns "hello world!"
 const greet = () => 'hello world!';
 
 //-----------------------------------------------------------------
@@ -227,19 +227,19 @@ const boolToWord = (b) => b ? 'Yes' : 'No';
 
 //-----------------------------------------------------------------
 
-function sum(numbers) {
-    let a = 0;
-    if (numbers !== undefined) {
-        for (let i = 0; i < numbers.length; i++) {
-            a += numbers[i];
-        }
-    }
-    return a;
-};
-
-function sum(numbers) {                          // выполняет то же, что и ф-я выше
-    return numbers.reduce((a, b) => a + b, 0);
-};
+// function sum(numbers) {
+//     let a = 0;
+//     if (numbers !== undefined) {
+//         for (let i = 0; i < numbers.length; i++) {
+//             a += numbers[i];
+//         }
+//     }
+//     return a;
+// };
+//
+// function sum(numbers) {                          // выполняет то же, что и ф-я выше
+//     return numbers.reduce((a, b) => a + b, 0);
+// };
 
 //-----------------------------------------------------------------
 
@@ -256,9 +256,9 @@ function SmallestIntegerFinder(numbers) {
 }
 
 //-----------------------------------------------------------------
-
-lovefunc = (f1, f2) => (f1 + f2) % 2 !== 0;
-console.log(lovefunc(2, 2));
+//
+// lovefunc = (f1, f2) => (f1 + f2) % 2 !== 0;
+// console.log(lovefunc(2, 2));
 
 //-----------------------------------------------------------------
 
@@ -290,9 +290,9 @@ const isSquare = n => {              // вычисляет: является л�
     return (n % Math.sqrt(n) === 0) ? true : false;
 }
 
-function isSquare(n) {             // делает то же, что и функция выше
-    return Math.sqrt(n) % 1 === 0;
-}
+// function isSquare(n) {             // делает то же, что и функция выше
+//     return Math.sqrt(n) % 1 === 0;
+// }
 
 //-----------------------------------------------------------------
 
@@ -472,7 +472,7 @@ function countPositivesSumNegatives(input) { // возвращает масси�
 
 //-----------------------------------------------------------------
 
-countRedBeads = (n) => n > 2 ? n * 2 - 2 : 0;
+// countRedBeads = (n) => n > 2 ? n * 2 - 2 : 0;
 
 //-----------------------------------------------------------------
 
@@ -712,13 +712,11 @@ const sequenceSum = (begin, end, step) => {
     if (begin > step) {
         return 0;
     } else {
-        let sum1 = 0;
-        let sum2 = begin + step;
-        while (sum2 < end) {
-            sum1 += sum2;
-            sum2 += step;
+        let sum = begin;
+        for (let s = 2; s < end; s + step) {
+            sum += s;
         }
-        return sum1;
+        return sum;
     }
 };
 
