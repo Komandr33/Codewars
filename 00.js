@@ -708,16 +708,28 @@ array.filter((v, i) => v % 2 && indices.push(i))
 console.log(array);
 
 
-const sequenceSum = (begin, end, step) => {
-    if (begin > step) {
-        return 0;
-    } else {
-        let sum = begin;
-        for (let s = 2; s < end; s + step) {
-            sum += s;
-        }
-        return sum;
-    }
-};
+function betterThanAverage(classPoints, yourPoints) {
+    return classPoints.reduce((accum, c) => accum + c) / classPoints.length < yourPoints
+}
 
-console.log(sequenceSum(2, 6, 2));
+console.log(betterThanAverage([100, 40, 34, 57, 29, 72, 57, 88], 75));
+
+//-----------------------------------------------------------------
+
+const stringToNumber = (str) => Number(str);
+console.log(typeof (stringToNumber('123')))
+
+//-----------------------------------------------------------------
+
+const isAnagram = (test, original) => {
+    const t = test.toLowerCase();
+    const o = original.toLowerCase();
+    return t == o
+}
+console.log(isAnagram('fdsBa', 'FBads'));
+
+//-----------------------------------------------------------------
+
+
+
+//-----------------------------------------------------------------
