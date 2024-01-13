@@ -722,8 +722,8 @@ console.log(typeof (stringToNumber('123')))
 //-----------------------------------------------------------------
 
 const isAnagram = (test, original) => {
-    const t = test.toLowerCase();
-    const o = original.toLowerCase();
+    const t = test.toLowerCase().split('').sort().join('');
+    const o = original.toLowerCase().split('').sort().join('');
     return t == o
 }
 console.log(isAnagram('fdsBa', 'FBads'));
