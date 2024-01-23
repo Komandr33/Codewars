@@ -729,7 +729,10 @@ const isAnagram = (test, original) => {
 console.log(isAnagram('fdsBa', 'FBads'));
 
 //-----------------------------------------------------------------
+const arr = [1, 2, -1, 2];
 
-
-
+const catchSignChange = (arr) => {
+    return arr.reduce((init, el, i) => init + ((el >= 0 && arr[i + 1] < 0) || (el < 0 && arr[i + 1] >= 0) ? 1 : 0), 0)
+};
+console.log(catchSignChange(arr));
 //-----------------------------------------------------------------
