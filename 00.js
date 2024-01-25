@@ -754,8 +754,12 @@ console.log(removeSmallest(arrNum1))
 
 //-----------------------------------------------------------------
 
-
-
+const setAlarm = (e, v) => {
+    let a = false
+    e === v ? a : e ? a = true : a
+    return a
+}
+console.log(setAlarm(true, false))
 //-----------------------------------------------------------------
 
 
