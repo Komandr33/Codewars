@@ -761,11 +761,24 @@ const setAlarm = (e, v) => {
 }
 console.log(setAlarm(true, false))
 //-----------------------------------------------------------------
+const arrNum11 = [10, 5, 3, 2, 1, 4];
+const sumArray = (arr) => (!arr || arr.length < 1) ? 0
+    : arr.sort((a, b) => a - b)
+        .slice(1, -1)
+        .reduce((acc, curr) => { return acc + curr }, 0)
 
-
-
+/*const sumArray = (arr) => {
+    if (!arr || arr.length < 1) {
+        return 0
+    } else {
+      let arr1 = arr.sort((a, b) => a - b)
+      arr1 = arr1.slice(1, -1)
+      return arr1.reduce((acc, curr) => {return acc + curr}, 0)
+    }
+}
+*/
+console.log(sumArray(arrNum11));
 //-----------------------------------------------------------------
-
 
 
 //-----------------------------------------------------------------
