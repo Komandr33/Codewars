@@ -784,12 +784,19 @@ const friend = (f) => f.filter(n => n.length === 4)
 console.log(friend(arrFriends))
 //-----------------------------------------------------------------
 
+function enough(cap, on, wait) {
+    let a = (cap - on - wait)
+    return a > 0 ? 0 : -a
+}
 
-
+function enough(cap, on, wait) {
+    return Math.max(wait + on - cap, 0);
+}
+console.log(enough(100, 60, 50))
 //-----------------------------------------------------------------
 
-
-
+const pow = (n) => Math.pow(n, 2)
+console.log(pow(5))
 //-----------------------------------------------------------------
 
 
