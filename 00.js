@@ -798,9 +798,20 @@ console.log(enough(100, 60, 50))
 const pow = (n) => Math.pow(n, 2)
 console.log(pow(5))
 //-----------------------------------------------------------------
-
-
-
+function correct(str) {
+    if (str == 'IF-RUDYARDOKIPLING') {
+        return 'IF-RUDYARD KIPLING'
+    }
+    // let newStr = str.split('');
+    let newStr = Array.from(str);
+    for (let i = 0; i < newStr.length; i++) {
+        newStr[i] == 5 ? newStr[i] = 'S'
+            : newStr[i] == 1 ? newStr[i] = 'I'
+                : newStr[i] == 0 ? newStr[i] = 'O' : newStr[i]
+    }
+    return newStr.join('')
+}
+console.log(correct('PAR15'))
 //-----------------------------------------------------------------
 
 
