@@ -811,13 +811,60 @@ function correct(str) {
     }
     return newStr.join('')
 }
-console.log(correct('PAR15'))
+
+function correct(string) {
+    return string.replace(/5/g, "S").replace(/0/g, "O").replace(/1/g, "I");
+}
+console.log(correct('IF-RUDYARDOKIPLING'))
+//-----------------------------------------------------------------
+let arrr = ['1', '2', '3', '4', '5', '6']
+
+function maxRoot(num) {
+    let a = ''
+    // a = num.slice(1)
+    for (let i = 0; i < num.length; i++) {
+        a = num[i]
+        num.splice(1, i)
+        console.log(a)
+    }
+    // return a
+}
+maxRoot(arrr)
+let arrr1 = ['1', '2', '3', '4', '5', '6']
+arrr1.splice(3, 1)
+console.log(arrr1)
 //-----------------------------------------------------------------
 
+// function productArray(num) {
+//     let a = []
+//     let b = num
+//     for (let i = 0; i < num.length; i++) {
+//         a = b.spliсe(i, 1,)
+//         console.log(a);
+//     }
+//     // a = num.map((n, i) => n.indexOf !== (i - 1) ? n * n : n)
+//     return a
+// }
+// console.log(productArray([1, 5, 2]));
 
+function productArray(num) {
+    let a = [];
+    // let b = num; // создаем копию массива num
+    for (let i = 0; i < num.length; i++) {
+        a = num.map((el, i) => num.filter(n => n.indexOf == i));
+        console.log(a);
+    }
+    // return a;
+}
+console.log(productArray([1, 5, 2]));
 
 //-----------------------------------------------------------------
+function productArray(arr) {
+    const totalProduct = arr.reduce((acc, curr) => acc * curr, 1);
 
-
-
-//-----------------------------------------------------------------
+    return arr.map(num => totalProduct / num);
+}
+function productArray(numbers) {
+    return numbers.map(x => numbers.reduce((a, b) => a * b) / x)
+}
+console.log(productArray([1, 100, 2])); // Вывод: [10, 2, 5]
