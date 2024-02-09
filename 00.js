@@ -868,3 +868,23 @@ function productArray(numbers) {
     return numbers.map(x => numbers.reduce((a, b) => a * b) / x)
 }
 console.log(productArray([1, 100, 2])); // Вывод: [10, 2, 5]
+
+function flickSwitch(arr) {
+    let result = true;
+    return arr.map(item => {
+        if (item === 'flick') {
+            result = !result;
+        }
+        return result;
+    });
+}
+
+const flickSwitch2 = (arr) => {
+    let flick = true;
+    return arr.map(el => el === 'flick' ? flick = !flick : flick)
+}
+console.log(flickSwitch2(['bicycle', 'jarmony', 'flick', 'sheep', 'flick', 'apple']));
+
+const openOrSenior = (players) => players.map(p => p[0] > 54 & p[1] > 7 ? 'Senior' : 'Open')
+
+console.log(openOrSenior([[33, 24], [85, 12], [28, -1], [78, 7], [75, 8]]));
