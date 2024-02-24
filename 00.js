@@ -869,6 +869,8 @@ function productArray(numbers) {
 }
 console.log(productArray([1, 100, 2])); // Вывод: [10, 2, 5]
 
+//---------------------------------------------------------------------------
+
 function flickSwitch(arr) {
     let result = true;
     return arr.map(item => {
@@ -885,6 +887,34 @@ const flickSwitch2 = (arr) => {
 }
 console.log(flickSwitch2(['bicycle', 'jarmony', 'flick', 'sheep', 'flick', 'apple']));
 
+//---------------------------------------------------------------------------
+
 const openOrSenior = (players) => players.map(p => p[0] > 54 & p[1] > 7 ? 'Senior' : 'Open')
 
 console.log(openOrSenior([[33, 24], [85, 12], [28, -1], [78, 7], [75, 8]]));
+
+//---------------------------------------------------------------------------
+
+const solution = (nums) => !nums || nums.length === 0 ? [] : nums.sort((a, b) => a - b)
+console.log(solution([4, 5, 3]));
+//---------------------------------------------------------------------------
+
+function removeEveryOther(arr) {
+    return arr.filter((el, i) => i % 2 == 0)
+}
+console.log(removeEveryOther(["4", "m", "s", "t", "q", "q", "i", "h", "d", "t", "m", "6", "j", "h", "5", "w", "2", "0", "k", "1", "j", "x", "p", "d", "w", "x", "h", "r", "u", "h", "f", "b", "q", "c", "u", "w"]))
+//---------------------------------------------------------------------------
+
+['4', 's', 'q', 'i', 'd', 'm', 'j', '5', '2', 'k', 'j', 'p', 'w', 'h', 'u', 'f', 'q', 'u']
+['4', 's', 'q', 'q', 'i', 'd', 'j', '5', '2', 'k', 'j', 'p', 'd', 'u', 'f', 'q', 'u']
+//---------------------------------------------------------------------------
+
+const findAverage = (arr) => arr ? arr.reduce((a, b) => a + b, 0) / arr.length : null;
+console.log(findAverage([1, 2, 3, 4]));
+//---------------------------------------------------------------------------
+
+const digitize = (n) => String(n).split('').map(e => +e).reverse()
+// const digitize = (n) => String(n).split('').map(Number).reverse()
+// const digitize = (n) => Array.from(String(n), Number).reverse()
+console.log(digitize(54321));
+//---------------------------------------------------------------------------
