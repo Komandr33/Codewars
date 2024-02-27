@@ -918,3 +918,12 @@ const digitize = (n) => String(n).split('').map(e => +e).reverse()
 // const digitize = (n) => Array.from(String(n), Number).reverse()
 console.log(digitize(54321));
 //---------------------------------------------------------------------------
+
+function pipeFix(num) {
+    let n = []
+    for (let i = num[0]; i <= num[num.length - 1]; i++) {
+        n.push(i)
+    }
+    return n;
+}
+console.log(pipeFix([5, 2, 3, 12]));
