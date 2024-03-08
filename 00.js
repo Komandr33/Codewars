@@ -927,3 +927,47 @@ function pipeFix(num) {
     return n;
 }
 console.log(pipeFix([5, 2, 3, 12]));
+
+// до вызова функции
+let salaries = {
+    John: 100,
+    Ann: 160,
+    Pete: 130
+}
+
+const multiplyNumeric = (m) => {
+    let total = 0
+    for (let key in m) {
+        total += m[key]
+    }
+    return total
+}
+
+console.log(multiplyNumeric(salaries))
+
+//---------------------------------------------------------------------------
+
+function XO(str) {
+    let arr = str.split('')
+    let a = 0
+    let b = 0
+    for (let i = 0; i < arr.length; i++) {
+        /o/i.test(arr[i]) ? a += 1 : /x/i.test(arr[i]) ? b += 1 : a
+    }
+    return a == b
+}
+
+console.log(XO('xxxoooo'))
+//---------------------------------------------------------------------------
+
+
+
+//---------------------------------------------------------------------------
+
+
+
+//---------------------------------------------------------------------------
+
+
+
+//---------------------------------------------------------------------------
