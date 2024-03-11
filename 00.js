@@ -967,6 +967,11 @@ console.log(sortByLength(["", "Moderately", "Brains", "Pizza"]));
 
 
 
+function reverseWords(str) {
+    let reverseWord = (w) => w.split('').reverse().join('')
+    return str.split(' ').map(e => reverseWord(e)).join(' ');
+}
+console.log(reverseWords('The quick brown fox jumps over the lazy dog.'));
 //---------------------------------------------------------------------------
 
 
