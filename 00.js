@@ -974,6 +974,13 @@ function reverseWords(str) {
 console.log(reverseWords('The quick brown fox jumps over the lazy dog.'));
 //---------------------------------------------------------------------------
 
-
-
+function between(a, b) {
+    let arr = [];
+    for (let i = a; i <= b; i++) {
+        arr.push(i)
+    }
+    arr.filter(n => Number.isInteger(n))
+    return arr;
+}
+console.log(between(-2, 3.2));
 //---------------------------------------------------------------------------
