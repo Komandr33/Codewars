@@ -984,3 +984,39 @@ function between(a, b) {
 }
 console.log(between(-2, 3.2));
 //---------------------------------------------------------------------------
+
+function gooseFilter(birds) {
+    const geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+    return birds.filter(el => !geese.includes(el))
+};
+
+function gooseFilter1(birds) {
+    var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+    return birds.filter(bird => geese.indexOf(bird) < 0);
+};
+console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]));
+//---------------------------------------------------------------------------
+
+function countSheep(num) {
+    const length = num;
+    const value = 'hello';
+    const arr11 = Array.from({ length }, () => value);
+    return arr11
+};
+console.log(countSheep(5));
+//---------------------------------------------------------------------------
+
+function countSheep(num) {
+    let str = ''
+    for (let i = 0; i < num; i++) {
+        str += `${i + 1} sheep...`
+    }
+    return str
+};
+console.log(countSheep(1));
+
+//---------------------------------------------------------------------------
+
+
+
+//---------------------------------------------------------------------------
