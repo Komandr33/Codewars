@@ -1026,3 +1026,45 @@ console.log(sortMyString("CodeWars"));
 //---------------------------------------------------------------------------
 
 const evenOrOdd = (n) => (n % 2 === 0) ? "Even" : 'Odd'
+
+//---------------------------------------------------------------------------
+// new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Lew"
+let f1 = {
+    name: "Lew",
+    health: 30,
+    damagePerAttack: 3
+}
+let f2 = {
+    name: "Harry",
+    health: 20,
+    damagePerAttack: 5
+}
+function declareWinner(fighter1, fighter2, firstAttacker) {
+    let h1 = fighter1.health, h2 = fighter2.health
+    let d1 = fighter1.damagePerAttack, d2 = fighter2.damagePerAttack
+    for (let i = 0; i < 30; i++) {
+        if (fighter1.name === firstAttacker) {
+            h2 -= d1;
+            if (h2 <= 0) {
+                return fighter1.name;
+            }
+            h1 -= d2;
+            if (h1 <= 0) {
+                return fighter2.name;
+            }
+        } else {
+            h1 -= d2;
+            if (h1 <= 0) {
+                return fighter2.name;
+            }
+            h2 -= d1;
+            if (h2 <= 0) {
+                return fighter1.name;
+            }
+        }
+    }
+}
+
+console.log(declareWinner(f1, f2, "Harry"));
+
+//---------------------------------------------------------------------------
