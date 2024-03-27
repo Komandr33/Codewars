@@ -1017,6 +1017,10 @@ console.log(countSheep(1));
 
 //---------------------------------------------------------------------------
 
-
-
+function sortMyString(S) {
+    const odd = [], even = [];
+    S.split('').forEach((e, i) => (i % 2 === 0) ? odd.push(e) : even.push(e));
+    return `${odd.join('')} ${even.join('')}`;
+}
+console.log(sortMyString("CodeWars"));
 //---------------------------------------------------------------------------
