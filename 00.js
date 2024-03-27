@@ -1024,3 +1024,5 @@ function sortMyString(S) {
 }
 console.log(sortMyString("CodeWars"));
 //---------------------------------------------------------------------------
+
+const evenOrOdd = (n) => (n % 2 === 0) ? "Even" : 'Odd'
