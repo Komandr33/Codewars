@@ -1095,13 +1095,25 @@
 // console.log(likes(["Alex", "Jacob", "Mark",]));
 
 function findOdd(a) {
+    debugger
     let v = []
-    for (let i = 0; i < a.length; i++) {
+    for (let i = 0; i < a.length; i++) {  //
         for (let f = 0; f < a.length; f++) {
-            if (a[i] === f) v.push(a[i])
+            if (a[i] === a[f]) v.push(a[i])
         }
         if (v.length % 2 !== 0) return a[i]
+        v = []
     }
-    return a[i];
+    return a[0];
 }
-console.log(findOdd[[1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]]);
+console.log(findOdd([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]));
+
+function findOdd1(A) {
+    var obj = {};
+    A.forEach(function (el) {
+        obj[el] ? obj[el]++ : obj[el] = 1;
+    });
+    for (let p in obj) {
+        if (obj[p] % 2 !== 0) return Number(p);
+    }
+}
