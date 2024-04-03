@@ -1094,6 +1094,8 @@
 // }
 // console.log(likes(["Alex", "Jacob", "Mark",]));
 
+//---------------------------------------------------------------------------
+
 function findOdd(a) {
     debugger
     let v = []
@@ -1120,7 +1122,6 @@ function findOdd1(A) {
 
 //---------------------------------------------------------------------------
 
-
 function solution(s) {
     let result = '';
     for (let i = 0; i < s.length; i++) {
@@ -1132,11 +1133,32 @@ function solution(s) {
     }
     return result.trim(); // Удаляем лишние пробелы в начале и в конце строки
 }
-console.log(solution('helloworld'));
-//---------------------------------------------------------------------------
-
+console.log(solution('helloWorld'));
 
 //---------------------------------------------------------------------------
 
-
+function diamond(n) {
+    let a = '*'
+    let result = '*\n';
+    for (let i = 1; i < n; i += 2) {
+        a += '**'
+        for (let j = 0; j < i; j += 2) {
+            result += a
+        }
+        result += '\n'
+    }
+    return result
+}
+console.log(diamond(5));
+//---------------------------------------------------------------------------
+function capitals(s) {
+    let arr = [];
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === s[i].toUpperCase()) {
+            arr.push(i)
+        }
+    }
+    return arr
+}
+console.log(capitals("CodEWaRs"));
 //---------------------------------------------------------------------------
