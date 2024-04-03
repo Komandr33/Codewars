@@ -1162,3 +1162,14 @@ function capitals(s) {
 }
 console.log(capitals("CodEWaRs"));
 //---------------------------------------------------------------------------
+
+function alphabetPosition(text) {
+    debugger
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+    let result = []
+    text.split('').forEach(e => {
+        alphabet.forEach((el, i) => { if (el === e.toLowerCase()) result.push(i) })
+    })
+    return result.join(' ');
+}
+console.log(alphabetPosition("The sunset sets at twelve o' clock."));
