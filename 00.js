@@ -1096,116 +1096,122 @@
 
 //---------------------------------------------------------------------------
 
-function findOdd(a) {
-    debugger
-    let v = []
-    for (let i = 0; i < a.length; i++) {  //
-        for (let f = 0; f < a.length; f++) {
-            if (a[i] === a[f]) v.push(a[i])
-        }
-        if (v.length % 2 !== 0) return a[i]
-        v = []
-    }
-    return a[0];
-}
-console.log(findOdd([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]));
+// function findOdd(a) {
+//     debugger
+//     let v = []
+//     for (let i = 0; i < a.length; i++) {  //
+//         for (let f = 0; f < a.length; f++) {
+//             if (a[i] === a[f]) v.push(a[i])
+//         }
+//         if (v.length % 2 !== 0) return a[i]
+//         v = []
+//     }
+//     return a[0];
+// }
+// console.log(findOdd([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]));
 
-function findOdd1(A) {
-    var obj = {};
-    A.forEach(function (el) {
-        obj[el] ? obj[el]++ : obj[el] = 1;
-    });
-    for (let p in obj) {
-        if (obj[p] % 2 !== 0) return Number(p);
-    }
-}
-
-//---------------------------------------------------------------------------
-
-function solution(s) {
-    let result = '';
-    for (let i = 0; i < s.length; i++) {
-        if (s[i] === s[i].toUpperCase()) {
-            result += ' ' + s[i];
-        } else {
-            result += s[i];
-        }
-    }
-    return result.trim(); // Удаляем лишние пробелы в начале и в конце строки
-}
-console.log(solution('helloWorld'));
+// function findOdd1(A) {
+//     var obj = {};
+//     A.forEach(function (el) {
+//         obj[el] ? obj[el]++ : obj[el] = 1;
+//     });
+//     for (let p in obj) {
+//         if (obj[p] % 2 !== 0) return Number(p);
+//     }
+// }
 
 //---------------------------------------------------------------------------
 
-function diamond(n) {
-    let a = '*'
-    let result = '*\n';
-    for (let i = 1; i < n; i += 2) {
-        a += '**'
-        for (let j = 0; j < i; j += 2) {
-            result += a
-        }
-        result += '\n'
-    }
-    return result
-}
-console.log(diamond(5));
-//---------------------------------------------------------------------------
-function capitals(s) {
-    let arr = [];
-    for (let i = 0; i < s.length; i++) {
-        if (s[i] === s[i].toUpperCase()) {
-            arr.push(i)
-        }
-    }
-    return arr
-}
-console.log(capitals("CodEWaRs"));
-//---------------------------------------------------------------------------
-
-function alphabetPosition(text) {
-    debugger
-    let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
-    let result = []
-    text.split('').forEach(e => {
-        alphabet.forEach((el, i) => { if (el === e.toLowerCase()) result.push(i) })
-    })
-    return result.join(' ');
-}
-console.log(alphabetPosition("The sunset sets at twelve o' clock."));
+// function solution(s) {
+//     let result = '';
+//     for (let i = 0; i < s.length; i++) {
+//         if (s[i] === s[i].toUpperCase()) {
+//             result += ' ' + s[i];
+//         } else {
+//             result += s[i];
+//         }
+//     }
+//     return result.trim(); // Удаляем лишние пробелы в начале и в конце строки
+// }
+// console.log(solution('helloWorld'));
 
 //---------------------------------------------------------------------------
-function accum(s) {
-    let result = ''
-    for (let i = 0; i < s.length; i++) {
-        result = result + s[i].toUpperCase() + s[i].repeat(i).toLowerCase() + '-'
-    }
-    return result.slice(0, -1)
-}
-console.log(accum('abcRtYd'));
+
+// function diamond(n) {
+//     let a = '*'
+//     let result = '*\n';
+//     for (let i = 1; i < n; i += 2) {
+//         a += '**'
+//         for (let j = 0; j < i; j += 2) {
+//             result += a
+//         }
+//         result += '\n'
+//     }
+//     return result
+// }
+// console.log(diamond(5));
+//---------------------------------------------------------------------------
+// function capitals(s) {
+//     let arr = [];
+//     for (let i = 0; i < s.length; i++) {
+//         if (s[i] === s[i].toUpperCase()) {
+//             arr.push(i)
+//         }
+//     }
+//     return arr
+// }
+// console.log(capitals("CodEWaRs"));
+//---------------------------------------------------------------------------
+
+// function alphabetPosition(text) {
+//     let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+//     let result = []
+//     text.split('').forEach(e => {
+//         alphabet.forEach((el, i) => { if (el === e.toLowerCase()) result.push(i) })
+//     })
+//     return result.join(' ');
+// }
+// console.log(alphabetPosition("The sunset sets at twelve o' clock."));
+
+//---------------------------------------------------------------------------
+// function accum(s) {
+//     let result = ''
+//     for (let i = 0; i < s.length; i++) {
+//         result = result + s[i].toUpperCase() + s[i].repeat(i).toLowerCase() + '-'
+//     }
+//     return result.slice(0, -1)
+// }
+// console.log(accum('abcRtYd'));
 //---------------------------------------------------------------------------
 
 function findUniq(arr) {
-    const counts = {}; // объект для подсчета частоты каждого элемента
-    const uniqueCounts = {}; // объект для подсчета уникальных элементов
-
+    const counts = {};
     for (let num of arr) {
         counts[num] = (counts[num] || 0) + 1;
-        uniqueCounts[num] = (uniqueCounts[num] || 0) + 1;
     }
-
-    for (let num in counts) {
-        if (counts[num] > 1) {
-            delete uniqueCounts[num];
+    for (let key in counts) {
+        if (counts[key] === 1) {
+            return key;
         }
     }
-
-    return parseFloat(Object.keys(uniqueCounts)[0]);
 }
 console.log(findUniq([0, 0, 0.55, 0, 0]));
 
 //---------------------------------------------------------------------------
 
+const arr = ['Aa', 'aaa', 'aaaaa', 'Aaa a', 'AaAaAa', 'a', 'd'];
 
-
+function findUniq(arr) {
+    let arr1 = arr.map(e => e.toLowerCase().slice(e.length - 1).trim())
+    const obj = {}
+    let val = ''
+    for (let v of arr1) {
+        obj[v] ? obj[v]++ : obj[v] = 1
+    }
+    for (let key in obj) {
+        if (obj[key] === 1) val = key
+    }
+    let res = arr1.indexOf(val)
+    return arr[res]
+}
 //---------------------------------------------------------------------------
