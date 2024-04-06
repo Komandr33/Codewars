@@ -1185,7 +1185,24 @@ function accum(s) {
 console.log(accum('abcRtYd'));
 //---------------------------------------------------------------------------
 
+function findUniq(arr) {
+    const counts = {}; // объект для подсчета частоты каждого элемента
+    const uniqueCounts = {}; // объект для подсчета уникальных элементов
 
+    for (let num of arr) {
+        counts[num] = (counts[num] || 0) + 1;
+        uniqueCounts[num] = (uniqueCounts[num] || 0) + 1;
+    }
+
+    for (let num in counts) {
+        if (counts[num] > 1) {
+            delete uniqueCounts[num];
+        }
+    }
+
+    return parseFloat(Object.keys(uniqueCounts)[0]);
+}
+console.log(findUniq([0, 0, 0.55, 0, 0]));
 
 //---------------------------------------------------------------------------
 
