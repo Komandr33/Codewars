@@ -1215,3 +1215,16 @@ function findUniq(arr) {
     return arr[res]
 }
 //---------------------------------------------------------------------------
+
+function duplicateEncode(str) {
+    let arr = str
+        .toLowerCase()
+        .split('')
+
+    return arr.map((el, i) => {
+        let isDuplicate = arr.some((e, index) => i !== index && e === el)
+        return isDuplicate ? ')' : '('
+    }).join('')
+}
+
+console.log(duplicateEncode("din"));
