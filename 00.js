@@ -990,129 +990,106 @@
 //     return birds.filter(el => !geese.includes(el))
 // };
 
-// function gooseFilter1(birds) {
-//     var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
-//     return birds.filter(bird => geese.indexOf(bird) < 0);
-// };
-// console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]));
-// //---------------------------------------------------------------------------
+function gooseFilter1(birds) {
+    var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+    return birds.filter(bird => geese.indexOf(bird) < 0);
+};
+console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]));
+//---------------------------------------------------------------------------
 
-// function countSheep(num) {
-//     const length = num;
-//     const value = 'hello';
-//     const arr11 = Array.from({ length }, () => value);
-//     return arr11
-// };
-// console.log(countSheep(5));
-// //---------------------------------------------------------------------------
+function countSheep(num) {
+    const length = num;
+    const value = 'hello';
+    const arr11 = Array.from({ length }, () => value);
+    return arr11
+};
+console.log(countSheep(5));
+//---------------------------------------------------------------------------
 
-// function countSheep(num) {
-//     let str = ''
-//     for (let i = 0; i < num; i++) {
-//         str += `${i + 1} sheep...`
-//     }
-//     return str
-// };
-// console.log(countSheep(1));
-
-// //---------------------------------------------------------------------------
-
-// function sortMyString(S) {
-//     const odd = [], even = [];
-//     S.split('').forEach((e, i) => (i % 2 === 0) ? odd.push(e) : even.push(e));
-//     return `${odd.join('')} ${even.join('')}`;
-// }
-// console.log(sortMyString("CodeWars"));
-// //---------------------------------------------------------------------------
-
-// const evenOrOdd = (n) => (n % 2 === 0) ? "Even" : 'Odd'
+function countSheep(num) {
+    let str = ''
+    for (let i = 0; i < num; i++) {
+        str += `${i + 1} sheep...`
+    }
+    return str
+};
+console.log(countSheep(1));
 
 // //---------------------------------------------------------------------------
+
+function sortMyString(S) {
+    const odd = [], even = [];
+    S.split('').forEach((e, i) => (i % 2 === 0) ? odd.push(e) : even.push(e));
+    return `${odd.join('')} ${even.join('')}`;
+}
+console.log(sortMyString("CodeWars"));
+//---------------------------------------------------------------------------
+
+const evenOrOdd = (n) => (n % 2 === 0) ? "Even" : 'Odd'
+
+//---------------------------------------------------------------------------
 // new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Lew"
-// let f1 = {
-//     name: "Lew",
-//     health: 30,
-//     damagePerAttack: 3
-// }
-// let f2 = {
-//     name: "Harry",
-//     health: 20,
-//     damagePerAttack: 5
-// }
-// function declareWinner(fighter1, fighter2, firstAttacker) {
-//     let h1 = fighter1.health, h2 = fighter2.health
-//     let d1 = fighter1.damagePerAttack, d2 = fighter2.damagePerAttack
-//     for (let i = 0; i < 30; i++) {
-//         if (fighter1.name === firstAttacker) {
-//             h2 -= d1;
-//             if (h2 <= 0) {
-//                 return fighter1.name;
-//             }
-//             h1 -= d2;
-//             if (h1 <= 0) {
-//                 return fighter2.name;
-//             }
-//         } else {
-//             h1 -= d2;
-//             if (h1 <= 0) {
-//                 return fighter2.name;
-//             }
-//             h2 -= d1;
-//             if (h2 <= 0) {
-//                 return fighter1.name;
-//             }
-//         }
-//     }
-// }
+let f1 = {
+    name: "Lew",
+    health: 30,
+    damagePerAttack: 3
+}
+let f2 = {
+    name: "Harry",
+    health: 20,
+    damagePerAttack: 5
+}
+function declareWinner(fighter1, fighter2, firstAttacker) {
+    let h1 = fighter1.health, h2 = fighter2.health
+    let d1 = fighter1.damagePerAttack, d2 = fighter2.damagePerAttack
+    for (let i = 0; i < 30; i++) {
+        if (fighter1.name === firstAttacker) {
+            h2 -= d1;
+            if (h2 <= 0) {
+                return fighter1.name;
+            }
+            h1 -= d2;
+            if (h1 <= 0) {
+                return fighter2.name;
+            }
+        } else {
+            h1 -= d2;
+            if (h1 <= 0) {
+                return fighter2.name;
+            }
+            h2 -= d1;
+            if (h2 <= 0) {
+                return fighter1.name;
+            }
+        }
+    }
+}
 
-// console.log(declareWinner(f1, f2, "Harry"));
-
-// //---------------------------------------------------------------------------
-// []-- > "no one likes this"
-// ["Peter"]-- > "Peter likes this"
-// ["Jacob", "Alex"]-- > "Jacob and Alex like this"
-// ["Max", "John", "Mark"]-- > "Max, John and Mark like this"
-// ["Alex", "Jacob", "Mark", "Max"]-- > "Alex, Jacob and 2 others like this"
-// function likes(name) {
-//     switch (name.length) {
-//         case 0: {
-//             return "no one likes this"
-//         }
-//         case 1: {
-//             return `${name[0]} likes this`
-//         }
-//         case 2: {
-//             return `${name[0]} and ${name[1]} likes this`
-//         }
-//         case 3: {
-//             return `${name[0]}, ${name[1]} and ${name[2]} likes this`
-//         }
-//         default: {
-//             return `${name[0]}, ${name[1]} and ${name.length - 2} others likes this`
-//         }
-//     }
-// }
-// console.log(likes(["Alex", "Jacob", "Mark",]));
+console.log(declareWinner(f1, f2, "Harry"));
 
 //---------------------------------------------------------------------------
-
-// function findOdd(a) {
-//     debugger
-//     let v = []
-//     for (let i = 0; i < a.length; a++) {
-//         for (let f = 0; f < a.length; f++) {
-//             if (a[f] === i) v.push(a[f])
-//         }
-//         if (v % 2 !== 0) return a[i]
-//     }
-//     return a[0];
-// }
-// console.log(findOdd([1, 1, 2]));
-//---------------------------------------------------------------------------
-
-// function findNextSquare(sq) {
-//     const sqrt = Math.sqrt(sq)
-//     return Number.isInteger(sqrt) ? (sqrt + 1) * (sqrt + 1) : - 1;
-//   }
-// console.log(findNextSquare(122));
-//---------------------------------------------------------------------------
+[]-- > "no one likes this"
+["Peter"]-- > "Peter likes this"
+["Jacob", "Alex"]-- > "Jacob and Alex like this"
+["Max", "John", "Mark"]-- > "Max, John and Mark like this"
+["Alex", "Jacob", "Mark", "Max"]-- > "Alex, Jacob and 2 others like this"
+function likes(name) {
+    switch (name.length) {
+        case 0: {
+            return "no one likes this"
+        }
+        case 1: {
+            return `${name[0]} likes this`
+        }
+        case 2: {
+            return `${name[0]} and ${name[1]} likes this`
+        }
+        case 3: {
+            return `${name[0]}, ${name[1]} and ${name[2]} likes this`
+        }
+        default: {
+            return `${name[0]}, ${name[1]} and ${name.length - 2} others likes this`
+        }
+    }
+}
+console.log(likes(["Alex", "Jacob", "Mark",]));
