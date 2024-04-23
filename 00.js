@@ -966,7 +966,6 @@
 // //---------------------------------------------------------------------------
 
 
-
 // function reverseWords(str) {
 //     let reverseWord = (w) => w.split('').reverse().join('')
 //     return str.split(' ').map(e => reverseWord(e)).join(' ');
@@ -1104,15 +1103,46 @@
 // console.log(findNextSquare(121));
 
 //---------------------------------------------------------------------------
+// 39
+// function persistence(num) {
+//     debugger
+//     let nums = num.toString().split('')
+//     if (nums.length === 1) {
+//         return +nums
+//     } else {
+//         // let result = nums.reduce((acc,mult) => acc * mult)
+//         for (let i = 0; i < nums.length; i++) {
+//             let result = nums[i] * nums[i + 1]
+//             nums = result.toString().split('')
+//         }
+//     }
+//     return num
+// }
 
+// describe("Persistent Bugger.", () => {
+//     it("Fixed tests", () => {
+//         assert.strictEqual(persistence(39),3);
+//         assert.strictEqual(persistence(4),0);
+//         assert.strictEqual(persistence(25),2);
+//         assert.strictEqual(persistence(999),4);
+//     });
+// });
 
+function persistence(num) {
+    let nums = num.toString().split('')
+    let count = 0
+    while (nums.length !== 1) {
+        nums = nums.reduce((acc, mult) => acc * mult).toString().split('')
+        count++
+    }
+    return count
+}
 
+console.log(persistence(999));
 //---------------------------------------------------------------------------
 
 
-
 //---------------------------------------------------------------------------
-
 
 
 //---------------------------------------------------------------------------
