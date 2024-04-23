@@ -1128,17 +1128,17 @@
 //     });
 // });
 
-function persistence(num) {
-    let nums = num.toString().split('')
-    let count = 0
-    while (nums.length !== 1) {
-        nums = nums.reduce((acc, mult) => acc * mult).toString().split('')
-        count++
-    }
-    return count
-}
+// function persistence(num) {
+//     let nums = num.toString().split('')
+//     let count = 0
+//     while (nums.length !== 1) {
+//         nums = nums.reduce((acc, mult) => acc * mult).toString().split('')
+//         count++
+//     }
+//     return count
+// }
 
-console.log(persistence(999));
+// console.log(persistence(999));
 //---------------------------------------------------------------------------
 
 
