@@ -1141,7 +1141,26 @@
 // console.log(persistence(999));
 //---------------------------------------------------------------------------
 
+function wave(str) {
+    let temp = []
+    let result = []
+    let arr = str.split('')
 
+    for (let i = 0; i < arr.length; i++) {
+        for (let f = 0; f < arr.length; f++) {
+            if (i === f) {
+                temp.push(arr[f].toUpperCase())
+            } else temp.push(arr[f])
+        }
+        if (arr[i] !== ' ') {
+            result.push(temp.join(''))
+        }
+        temp = []
+    }
+    return result
+}
+
+console.log(wave('two words'));
 //---------------------------------------------------------------------------
 
 
