@@ -1167,7 +1167,7 @@ function twoSum(numbers, target) {
     debugger
     let arr = []
     for (let i = 0; i < numbers.length; i++) {
-        for (let j = 1; j < numbers.length; j++) {
+        for (let j = i + 1; j < numbers.length; j++) {
             if (numbers[i] + numbers[j] === target) { // 1 + 3
                 arr.push(i)
                 arr.push(j)
