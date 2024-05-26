@@ -1141,27 +1141,41 @@
 // console.log(persistence(999));
 //---------------------------------------------------------------------------
 
-function wave(str) {
-    let temp = []
-    let result = []
-    let arr = str.split('')
+// function wave(str) {
+//     let temp = []
+//     let result = []
+//     let arr = str.split('')
 
-    for (let i = 0; i < arr.length; i++) {
-        for (let f = 0; f < arr.length; f++) {
-            if (i === f) {
-                temp.push(arr[f].toUpperCase())
-            } else temp.push(arr[f])
-        }
-        if (arr[i] !== ' ') {
-            result.push(temp.join(''))
-        }
-        temp = []
-    }
-    return result
-}
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let f = 0; f < arr.length; f++) {
+//             if (i === f) {
+//                 temp.push(arr[f].toUpperCase())
+//             } else temp.push(arr[f])
+//         }
+//         if (arr[i] !== ' ') {
+//             result.push(temp.join(''))
+//         }
+//         temp = []
+//     }
+//     return result
+// }
 
-console.log(wave('two words'));
+// console.log(wave('two words'));
 //---------------------------------------------------------------------------
 
+function twoSum(numbers, target) {
+    debugger
+    let arr = []
+    for (let i = 0; i < numbers.length; i++) {
+        for (let j = 1; j < numbers.length; j++) {
+            if (numbers[i] + numbers[j] === target) { // 1 + 3
+                arr.push(i)
+                arr.push(j)
+                return arr;
+            }
+        }
+    }
+}
 
+console.log(twoSum([1, 2, 3], 4))
 //---------------------------------------------------------------------------
