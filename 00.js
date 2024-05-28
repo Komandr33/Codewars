@@ -1163,19 +1163,36 @@
 // console.log(wave('two words'));
 //---------------------------------------------------------------------------
 
-function twoSum(numbers, target) {
-    debugger
-    let arr = []
-    for (let i = 0; i < numbers.length; i++) {
-        for (let j = i + 1; j < numbers.length; j++) {
-            if (numbers[i] + numbers[j] === target) { // 1 + 3
-                arr.push(i)
-                arr.push(j)
-                return arr;
-            }
-        }
+// function twoSum(numbers, target) {
+//     debugger
+//     let arr = []
+//     for (let i = 0; i < numbers.length; i++) {
+//         for (let j = i + 1; j < numbers.length; j++) {
+//             if (numbers[i] + numbers[j] === target) { // 1 + 3
+//                 arr.push(i)
+//                 arr.push(j)
+//                 return arr;
+//             }
+//         }
+//     }
+// }
+//
+// console.log(twoSum([1, 2, 3], 4))
+
+//---------------------------------------------------------------------------
+
+function factorial(n) {
+    if (n > 12 || n < 0) {
+        return new Error('RangeError')
+    }
+    if (n === 0 || n === 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
     }
 }
 
-console.log(twoSum([1, 2, 3], 4))
-//---------------------------------------------------------------------------
+const fact = n =>
+    (n > 12 || n < 0) ? 'RangeError'
+        : (n === 0 || n === 1) ? 1
+            : n * factorial(n - 1);
