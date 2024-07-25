@@ -1181,18 +1181,41 @@
 
 //---------------------------------------------------------------------------
 
-function factorial(n) {
-    if (n > 12 || n < 0) {
-        return new Error('RangeError')
+// function factorial(n) {
+//     if (n > 12 || n < 0) {
+//         return new Error('RangeError')
+//     }
+//     if (n === 0 || n === 1) {
+//         return 1;
+//     } else {
+//         return n * factorial(n - 1);
+//     }
+// }
+
+// const fact = n =>
+//     (n > 12 || n < 0) ? 'RangeError'
+//         : (n === 0 || n === 1) ? 1
+//             : n * factorial(n - 1);
+
+//---------------------------------------------------------------------------
+
+function divisors(integer) {
+    let resArr = [];
+    for (let i = 2; i <= integer; i++) {
+        if (integer % i === 0) {
+            resArr.push(i)
+        }
     }
-    if (n === 0 || n === 1) {
-        return 1;
-    } else {
-        return n * factorial(n - 1);
+    if (resArr.length == 1) {
+        return `${integer} is prime`
     }
+    resArr.pop()
+    return resArr
 }
 
-const fact = n =>
-    (n > 12 || n < 0) ? 'RangeError'
-        : (n === 0 || n === 1) ? 1
-            : n * factorial(n - 1);
+console.log(divisors(15));
+//---------------------------------------------------------------------------
+
+
+
+//---------------------------------------------------------------------------
