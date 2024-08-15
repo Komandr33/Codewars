@@ -1199,52 +1199,81 @@
 
 //---------------------------------------------------------------------------
 
-function divisors(integer) {
-    let resArr = [];
-    for (let i = 2; i <= integer; i++) {
-        if (integer % i === 0) {
-            resArr.push(i)
-        }
-    }
-    if (resArr.length == 1) {
-        return `${integer} is prime`
-    }
-    resArr.pop()
-    return resArr
-}
+// function divisors(integer) {
+//     let resArr = [];
+//     for (let i = 2; i <= integer; i++) {
+//         if (integer % i === 0) {
+//             resArr.push(i)
+//         }
+//     }
+//     if (resArr.length == 1) {
+//         return `${integer} is prime`
+//     }
+//     resArr.pop()
+//     return resArr
+// }
 
-console.log(divisors(15));
+// console.log(divisors(15));
 //---------------------------------------------------------------------------
 
-function solution(roman) {
-    const numRoman = { // таблица расшифровки символов
-        // если пред. значение меньше последующего, оно вычитается из последующего
-        // и эти значения идут как слитные
-        'I': 1,
-        'V': 5,
-        'X': 10,
-        'L': 50,
-        'C': 100,
-        'D': 500,
-        'M': 1000
-    }
-    let res1 = [], res2 = [] // резултирующие массивы
+// function solution(roman) {
+//     const numRoman = { // таблица расшифровки символов
+//         // если пред. значение меньше последующего, оно вычитается из последующего
+//         // и эти значения идут как слитные
+//         'I': 1,
+//         'V': 5,
+//         'X': 10,
+//         'L': 50,
+//         'C': 100,
+//         'D': 500,
+//         'M': 1000
+//     }
+//     let res1 = [], res2 = [] // резултирующие массивы
 
-    roman.split('').map(i => {
-        let item = Object.keys(numRoman).find(el => i === el)
-        if (item) res1.push(numRoman[item])
-    }) // расшифровка знач-й и заполнение 1-го массива
+//     roman.split('').map(i => {
+//         let item = Object.keys(numRoman).find(el => i === el)
+//         if (item) res1.push(numRoman[item])
+//     }) // расшифровка знач-й и заполнение 1-го массива
 
-    for (let i = 0; i < res1.length; i++) {
-        let num = (res1[i + 1] > res1[i]) ? res1[i + 1] - res1[i] : 0 //нахожу слитые символы, если есть записываю результат в перем-ю
-        if (num > 0) { // заполняю результирущий массив
-            res2.push(num)  // если слитые символы были, то их резултат идёт в результ-й массив
-            res1.splice(i, 2) // и удаляю их значения из первого массива
-            i = i - 1
-        } else res2.push(res1[i]) // иначе добавляю значение отдельного символа
+//     for (let i = 0; i < res1.length; i++) {
+//         let num = (res1[i + 1] > res1[i]) ? res1[i + 1] - res1[i] : 0 //нахожу слитые символы, если есть записываю результат в перем-ю
+//         if (num > 0) { // заполняю результирущий массив
+//             res2.push(num)  // если слитые символы были, то их резултат идёт в результ-й массив
+//             res1.splice(i, 2) // и удаляю их значения из первого массива
+//             i = i - 1
+//         } else res2.push(res1[i]) // иначе добавляю значение отдельного символа
+//     }
+//     return res2.reduce((accum, el) => accum + el);
+// }
+
+// console.log(solution("MDCLXVI"));
+//---------------------------------------------------------------------------
+
+function findMissingLetter(arr) {
+    const alpfabet = [
+        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+        'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+        'u', 'v', 'w', 'x', 'y', 'z'
+    ]
+    const isUpperCase = arr[0] === arr[0].toUpperCase()
+    const cropAlpfabet = alpfabet.slice(alpfabet.indexOf(arr[0].toLowerCase()));
+    const newArr = arr.map(el => el.toLowerCase())
+    for (let i = 0; i < arr.length; i++) {
+        if (cropAlpfabet[i] != newArr[i]) {
+            return isUpperCase ? cropAlpfabet[i].toUpperCase() : cropAlpfabet[i];
+        }
     }
-    return res2.reduce((accum, el) => accum + el);
+
+    return '';
 }
+console.log(findMissingLetter(['O', 'Q', 'R', 'S'])); // 'P'
 
-console.log(solution("MDCLXVI"));
+//---------------------------------------------------------------------------
+
+
+
+//---------------------------------------------------------------------------
+
+
+
 //---------------------------------------------------------------------------
