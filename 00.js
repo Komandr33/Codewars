@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // function countSheeps(arrayOfSheep) {
 //     // TODO May the force be with you
@@ -1249,31 +1249,36 @@
 // console.log(solution("MDCLXVI"));
 //---------------------------------------------------------------------------
 
-function findMissingLetter(arr) {
-    const alpfabet = [
-        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
-        'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
-        'u', 'v', 'w', 'x', 'y', 'z'
-    ]
-    const isUpperCase = arr[0] === arr[0].toUpperCase()
-    const cropAlpfabet = alpfabet.slice(alpfabet.indexOf(arr[0].toLowerCase()));
-    const newArr = arr.map(el => el.toLowerCase())
-    for (let i = 0; i < arr.length; i++) {
-        if (cropAlpfabet[i] != newArr[i]) {
-            return isUpperCase ? cropAlpfabet[i].toUpperCase() : cropAlpfabet[i];
-        }
-    }
+//function findMissingLetter(arr) {
+//    const alpfabet = [
+//        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+//        'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+//        'u', 'v', 'w', 'x', 'y', 'z'
+//    ]
+//    const isUpperCase = arr[0] === arr[0].toUpperCase()
+//    const cropAlpfabet = alpfabet.slice(alpfabet.indexOf(arr[0].toLowerCase()));
+//    const newArr = arr.map(el => el.toLowerCase())
+//    for (let i = 0; i < arr.length; i++) {
+//        if (cropAlpfabet[i] != newArr[i]) {
+//            return isUpperCase ? cropAlpfabet[i].toUpperCase() : cropAlpfabet[i];
+//        }
+//    }
+//
+//    return '';
+//}
+//console.log(findMissingLetter(['O', 'Q', 'R', 'S'])); // 'P'
 
-    return '';
+//---------------------------------------------------------------------------
+
+
+//---------------------------------------------------------------------------
+function babySharkLyrics() {
+  let s = 'shark';
+  return ['Baby ' + s, 'Mommy ' + s, 'Daddy ' + s, 'Grandma ' + s, 'Grandpa ' + s, 'Let\'s go hunt']
+    .map(s => `${s}, doo doo doo doo doo doo\n`.repeat(3) +`${s}!\n`)
+    .join('') + 'Run away,…';
 }
-console.log(findMissingLetter(['O', 'Q', 'R', 'S'])); // 'P'
 
-//---------------------------------------------------------------------------
-
-
-
-//---------------------------------------------------------------------------
-
-
+console.log(babySharkLyrics());
 
 //---------------------------------------------------------------------------
