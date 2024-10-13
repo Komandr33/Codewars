@@ -1270,15 +1270,33 @@
 
 //---------------------------------------------------------------------------
 
+function countRepeats(str) {
+  let count = 0
+  let arr = str.split('');
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === arr[i + 1]) {
+      arr.splice(i, 1);
+      count++;
+      i--;
+    }
+  }
 
-//---------------------------------------------------------------------------
-function babySharkLyrics() {
-  let s = 'shark';
-  return ['Baby ' + s, 'Mommy ' + s, 'Daddy ' + s, 'Grandma ' + s, 'Grandpa ' + s, 'Let\'s go hunt']
-    .map(s => `${s}, doo doo doo doo doo doo\n`.repeat(3) +`${s}!\n`)
-    .join('') + 'Run away,…';
+  return count
 }
 
-console.log(babySharkLyrics());
+console.log(countRepeats('AABCCD'));
+
+
+
+//---------------------------------------------------------------------------
+
+// function babySharkLyrics() {
+//   let s = 'shark';
+//   return ['Baby ' + s, 'Mommy ' + s, 'Daddy ' + s, 'Grandma ' + s, 'Grandpa ' + s, 'Let\'s go hunt']
+//     .map(s => `${s}, doo doo doo doo doo doo\n`.repeat(3) +`${s}!\n`)
+//     .join('') + 'Run away,…';
+// }
+
+// console.log(babySharkLyrics());
 
 //---------------------------------------------------------------------------
