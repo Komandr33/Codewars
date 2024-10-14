@@ -1270,23 +1270,21 @@
 
 //---------------------------------------------------------------------------
 
-function countRepeats(str) {
-  let count = 0
-  let arr = str.split('');
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === arr[i + 1]) {
-      arr.splice(i, 1);
-      count++;
-      i--;
-    }
-  }
+// function countRepeats(str) {
+//   let count = 0
+//   let arr = str.split('');
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === arr[i + 1]) {
+//       arr.splice(i, 1);
+//       count++;
+//       i--;
+//     }
+//   }
 
-  return count
-}
+//   return count
+// }
 
-console.log(countRepeats('AABCCD'));
-
-
+// console.log(countRepeats('AABCCD'));
 
 //---------------------------------------------------------------------------
 
@@ -1300,3 +1298,11 @@ console.log(countRepeats('AABCCD'));
 // console.log(babySharkLyrics());
 
 //---------------------------------------------------------------------------
+
+const binaryArrayToNumber = arr => {
+  // your code
+  const str = arr.join('')
+  return parseInt(str, 2)
+};
+
+console.log(binaryArrayToNumber([0, 0, 0, 1]));
