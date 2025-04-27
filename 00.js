@@ -120,9 +120,6 @@
 
 // //-----------------------------------------------------------------
 
-
-// //-----------------------------------------------------------------
-
 // // function multByFuctor(value, multiplayer = 1) {
 // //     return value * multiplayer
 // // }
@@ -1299,10 +1296,50 @@
 
 //---------------------------------------------------------------------------
 
-const binaryArrayToNumber = arr => {
-  // your code
-  const str = arr.join('')
-  return parseInt(str, 2)
-};
+//const binaryArrayToNumber = arr => {
+//  // your code
+//  const str = arr.join('')
+//  return parseInt(str, 2)
+//};
+//
+//console.log(binaryArrayToNumber([0, 0, 0, 1]));
 
-console.log(binaryArrayToNumber([0, 0, 0, 1]));
+//---------------------------------------------------------------------------
+
+class Dinglemouse {
+  constructor() {
+    this.attributes = new Map;
+  }
+
+  #setAttribute(arg, value) {
+        this.attributes.set(arg, value);
+  }
+
+  setAge(age) {
+    this.#setAttribute('age', `I am ${age}.`);
+    return this;
+  }
+
+  setSex(sex) {
+    this.#setAttribute('sex', `I am ${sex === 'M' ? 'male' : 'female'}.`);
+    return this;
+  }
+
+  setName(name) {
+    this.#setAttribute('name', `My name is ${name}.`);
+    return this;
+  }
+
+  hello() {
+    return `Hello. ${[...this.attributes.values()].join(' ')}`.trim();
+  }
+}
+
+let dm = new Dinglemouse();
+console.log(dm.hello());
+
+//---------------------------------------------------------------------------
+
+
+
+//---------------------------------------------------------------------------
